@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu" ng-app="AngularStart">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="JS/app.js"></script>
+    <script src="JS/maincontroller.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>AngularJs alapok</h1>
+    <div ng-controller="MainController">
+        <h2>Szia Uram! {{"Angular " +  "tanfolyam " + "érdekel-e???"}}</h2>
+        <h2>{{szoveg}}</h2>
+        <h2>Kapcsoljuk össze a változónkat szöveges beviteli mezővel</h2>
+        <input type="text" ng-model="szoveg" style="width: 300px;">
+        <hr>
+        <h2>Automatikusan generált lista</h2>
+        <ul>
+            <li ng-repeat="ember in emberek">
+                <span><b>{{ember.nev}}</b> ({{ember.eletkor}} éves)</span>
+            </li>
+        </ul>
+        <h2>Indexelt kiegészített lista</h2>
+        <ul>
+            <li ng-repeat="ember in emberek">
+                <span>{{$index+1}}. <b>{{ember.nev}}</b> ({{ember.eletkor}} éves)</span>
+            </li>
+        </ul>
+        <h2>Az ng-repeat direktíva változói</h2>
+        <p>$first $middle $last $odd $even</p>
+        <ul>
+            <li ng-repeat="ember in emberek">
+                <span>{{$index}}. <b>{{ember.nev}}</b> ({{ember.eletkor}} éves) {{$first}} {{$middle}} {{$last}} {{$odd}} {{$even}}</span>
+            </li>
+        </ul>
+    </div>
+    
+    
+</body>
+</html>
